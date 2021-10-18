@@ -1,0 +1,127 @@
+<div class="wrapper">
+  <div class="headerTxt">
+    {{objekti.length}} smestaja
+    <h1>Objekti na lokaciji {{lokacija}}</h1>
+    Pogledaj COVID-19 restrikcije pre nego sto zakazete.<a
+        href="https://www.airbnb.com/help/topic/1418/government-travel-restrictions-and-advisories">Saznaj vise</a>
+        </div>
+        <div class="headerButtons">
+ <button type="button" class="btn" data-toggle="modal"
+  data-target="#filtersModal">Filteri</button>
+        </div>
+        <hr>
+    <div class="objekt-list" *ngFor="let objekat of objekti">
+        <div class="main">
+            <div class="opis">
+              <a routerLink="/objekat/{{objekat?.naziv}}"> <p style="color: lightgrey;"><u>{{objekat?.naziv}}</u></p></a>
+                <h2>Kratak opis:</h2>
+                <p class="opisTxt">{{objekat?.opis}}</p>
+                <div class="detalji">
+                    <h3>Pravila smestaja:</h3>
+                    <ul>
+                        <span [hidden]="objekat.isPetFriendly">
+                          <li><i class="fas fa-paw"></i>Dozvoljeni ljubimci</li>
+                        </span>
+                        <span [hidden]="objekat.isSmoking">
+                          <li><i class="fas fa-smoking"></i>Dozvoljene cigarete</li>
+                        </span>
+                        <span [hidden]="objekat.isParking">
+                          <li><i class="fas fa-parking"></i>Besplatan parking</li>
+                        </span>
+                        <span [hidden]="objekat.isWifi">
+                          <li><i class="fas fa-wifi"></i>Besplatan internet</li>
+                        </span>
+                        <span [hidden]="objekat.isTv">
+                          <li><i class="fas fa-tv"></i>Kablovska televizja</li>
+                        </span>
+                        <span [hidden]="objekat.isAirCondition">
+                          <li><i class="fas fa-fan"></i></li>
+                        </span>
+                      </ul>
+                </div>
+                <p><b>{{objekat?.cena | currency:'EUR'}}/noc</b></p>
+            </div>
+           
+              <img src="{{objekat?.slikaUrl}}" ><br>
+            
+       
+
+        </div>
+    </div>
+
+</div>
+
+<div class="objekt-list" *ngIf="objekti.length==0">
+<p>Nema ponudjenih smestaja</p>
+  </div>
+
+
+
+<!--GUESTS MODAL-->
+
+
+<div class="modal draggable fade bd-example-modal-lg" id="filtersModal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center">Filteri</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form #filtersForm="ngForm" (ngSubmit)="onAddFilter(filtersForm)">
+            <fieldset class="form-group">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" name="isPetFriendly" ngModel class="form-check-input">
+                  Pet friendly
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" name="isSmoking" ngModel class="form-check-input">
+                  Dozvoljene cigarate
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" name="isParking" ngModel class="form-check-input">
+                  Besplatan parking
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" name="isWifi" ngModel class="form-check-input">
+                  Wifi
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" name="isAirCondition" ngModel class="form-check-input">
+                  Klima uredjaj
+                </label>
+              </div>
+              
+              <div class="form-check disabled">
+                <label class="form-check-label">
+                  <input type="checkbox" name="isTv" ngModel class="form-check-input">
+                  TV
+                </label>
+              </div>
+            </fieldset>
+            <button type="submit" style="display: none;" id="new-filter-save"></button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="filters-close">Zatvori</button>
+        <button type="button" (click)="applyFilters()" [disabled]="filtersForm.invalid"
+          class="btn btn-primary">Sacuvaj
+          promene</button>
+      </div>
+    </div>
+  </div>
+</div>

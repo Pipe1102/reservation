@@ -1,0 +1,20 @@
+.navbar{
+    justify-content: space-between;
+    background-color: #e67e22;
+    font-size: 1.2rem;
+    height: 60px;
+    
+  
+}
+
+
+.navbar span {
+    display: inline;
+    float: right;
+    padding-right: 1rem;
+}
+.navbar span a{
+    text-decoration: none;
+    color: black;
+    gap:10px;
+}

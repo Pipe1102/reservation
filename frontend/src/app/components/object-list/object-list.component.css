@@ -1,0 +1,64 @@
+.whole{
+    background-color: darkgray;
+}
+.wrapper{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 90%;
+}
+
+.slikaObjekat{
+    width: 300px;
+    height: 300px;
+    border-radius: 9px;
+}
+.wrapper .main_content{
+    display: inline-block;
+    padding-right: 100px;
+}
+
+.glava{
+    width: 100%;
+}
+.glava ul {
+    list-style: none;
+}
+.glava ul li{
+    display: inline-block;
+    font-size: 1.15rem;
+    margin-right: 20px;
+}
+.glava a{
+    text-decoration: none;
+    color:black;
+}
+.main_content .textArea{
+   
+    padding-top: 5px;
+}
+.main_content .price{
+    display: block;
+    float:right;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.main_content .textCard{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.dropdown button{
+    background-color: #e67e22;
+}
+
+
+
+
+
+
+
+
+
+

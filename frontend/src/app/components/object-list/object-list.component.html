@@ -1,0 +1,84 @@
+<div class="whole">
+  <div class="wrapper">
+    <div class="glava">
+      <div class="col-md-12">
+        <ul>
+          <li><a (click)="getKategorija('all')">List svih</a></li>
+          <li><a (click)="getKategorija('Kuca')"> <i class="fas fa-home"></i>Kuce</a></li>
+          <li><a (click)="getKategorija('Apartmani')"> <i class="fas fa-building"></i>Apartmani</a></li>
+          <li><a (click)="getKategorija('Splav na vodi')"> <i class="fas fa-water"></i>Splavovi na vodi</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Filteri
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a (click)="sortByMinCena()" class="dropdown-item" >Najpovoljnije</a>
+                <a (click)="sortByMaxCena()" class="dropdown-item" >Premium</a>
+                <a (click)="sortByVelicina()" class="dropdown-item" >Najveca kvadratura</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Lokacije
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a (click)="getLokacija('Beograd')" class="dropdown-item">Beograd</a>
+                <a (click)="getLokacija('Nis')" class="dropdown-item">Nis</a>
+                <a (click)="getLokacija('Novi sad')" class="dropdown-item">Novi sad</a>
+                <a (click)="getLokacija('Kopaonik')" class="dropdown-item">Kopaonik</a>
+                <a (click)="getLokacija('Tara')" class="dropdown-item">Tara</a>
+                <a (click)="getLokacija('Zlatibor')" class="dropdown-item">Zlatibor</a>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <hr>
+    </div>
+
+
+    <div class="main_content" *ngFor="let temp of objekti">
+
+      <a routerLink="/objekat/{{temp?.naziv}}">
+        <img src="{{temp?.slikaUrl}}" class="slikaObjekat">
+      </a>
+      <div class="textArea">
+        <div class="price">{{temp?.cena| currency:'EUR'}} /po nocenju</div>
+        <div class="textCard">{{temp?.lokacija}}</div>
+        <div class="textCard">{{temp?.naziv}}</div>
+        <!---  <button  class="btn btn-outline-danger" (click)="onDeleteObjekat(temp?.naziv)"><i
+          class="fas fa-trash"></i></button>
+          <button class="btn btn-outline-info" (click)="onEditUser(temp)"><i class="fas fa-edit"></i></button>-->
+      </div>
+    </div>
+  </div>
+  <!--<button [hidden]="true" type="button" id="openObjekatEdit" data-toggle="modal" data-target="#editObjekatModal">
+    </button>-->
+  <!--Error message-->
+  <div *ngIf="objekti?.length==0" class="alert alert-warning col-md-12" role="alert">
+    Nema pronadjenih proslava
+  </div>
+</div>
+
+
+
+
+<!--<div class="modal draggable fade bd-example-modal-lg" id="addObjekatModal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center">Filteri</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      </div>
+      </div>
+      </div>-->

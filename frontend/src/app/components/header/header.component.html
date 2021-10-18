@@ -1,0 +1,26 @@
+<nav *ngIf="nav.visible" class="navbar visible navbar-expand-lg ">
+    <div><a style="color: black;text-decoration: none;" routerLink="/home">Lako do odmora</a></div>
+    <div>
+       
+        <span *ngIf="isAdminOrManager"><a routerLink="/user/management">Management</a></span>
+        <span ><a routerLink="/asortiman">Asortiman</a></span>
+       <!---<span><a>Info</a></span>-->
+        <span><a routerLink="/home">Home</a> </span>
+        <span *ngIf="isLoggedIn">
+            <a><div class="dropdown">
+                <a class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" routerLink="/rezervacije/{{username}}"><b>Rezervacije</b></a>
+                  <a class="dropdown-item" href="#"><b>Another action</b></a>
+                  <a (click)="onLogOut()" class="dropdown-item" ><b>Odjavi se</b></a>
+                </div>
+              </div></a>
+         </span>
+         <span *ngIf="!isLoggedIn">
+             <a routerLink="login"><b>Login</b></a>
+         </span>
+         
+    </div>
+</nav>

@@ -1,0 +1,40 @@
+.wrapper{
+    background-color: antiquewhite;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.objekt-list{
+    display: flex;
+    
+}
+.main{
+    padding: 20px;
+    
+}
+.main img{
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 9px;
+}
+.main .opis{
+    padding-left: 10px;
+    font-size: 1.2rem;
+    float: right;  
+}
+.main .opisTxt{
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    max-width: 30ch;
+    white-space: nowrap;
+}
+.main .detalji ul{
+    max-width: 30ch;
+}
+.main .detalji li{
+    list-style: none;
+    display: flex;
+    font-size: 16px;
+}
+

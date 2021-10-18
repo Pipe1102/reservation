@@ -1,0 +1,16 @@
+body{
+    font-weight: 400;
+    line-height: 1;
+    font-family: 'Lato',sans-serif;
+    color:#555;
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+

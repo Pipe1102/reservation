@@ -1,0 +1,112 @@
+
+.container{
+  margin:0 auto;
+  width: 1200px;
+}
+header{
+  background-color: black;
+  height: 100vh;
+  position: relative;
+  background-image: url(/assets/img/img5.jpg);
+  background-size: cover;
+  color:#fff
+}
+nav{
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+.header-container{
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+h1{
+  font-size: 52px;
+  margin-bottom: 32px;
+}
+p{
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+.btn:link,
+.btn:visited{
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #e67e22;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+h2{
+  font-size: 44px;
+  margin-bottom: 48px;
+}
+section{
+  padding: 30px 0;
+}
+.section-lokacije{
+  padding: 50px 40px;
+}
+.section-lokacije h2{
+  padding: 0 50px;
+  
+}
+.main-lokacija{
+  display: flex;
+  gap: 20px 40px;
+  align-items: center;
+  justify-content: center;
+  
+}
+.main-lokacija .img-nesto{
+  width: 300px;
+  height: 300px;
+  border-radius: 9px;
+}
+.main-pet{
+  padding: 50px 40px;
+  display: flex;
+  gap:30px;
+}
+.header3{
+  font-size: 20px;
+  float: left;
+
+  font-style: bold;
+}
+.main-pet .pet-pic{
+  float:right;
+}
+.main-pet .pet-pic img{
+  width: 400px;
+  height: 400px;
+  border-radius: 9px;
+}
+.main-pet .pet-pic p{
+  font-style: oblique;
+}
+.main-pet{
+width:100%
+}
+.section-info{
+  padding: 50 40px;
+ 
+}
+.info-content{
+  min-width: 300px;
+  max-width: 1000px;
+  border-radius: 9px;
+  height: 400px;
+  background-image: url(/assets/img/desk.jpg);
+  background-repeat: no-repeat;
+  color: black;
+}
+

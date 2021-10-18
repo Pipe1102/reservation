@@ -1,0 +1,27 @@
+<div class="tableWrapper">
+    <div class="col-lg-12">
+        <table class="table table-hover">
+            <thead class="table-borderless">
+              <tr class="text-center">
+                <th>Naziv</th>
+                <th>Broj osoba</th>
+                <th>Datum od</th>
+                <th>Datum do</th>
+                <th>Zahtev za otkazivanje</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let temp of rezervacije">
+              <tr class="text-center">
+                <td>{{temp?.objekatNaziv}}</td>
+                <td>{{temp?.brojGostiju}}</td>
+                <td>{{temp?.datumOd}}</td>
+                <td>{{temp?.datumDo}}</td>
+                <td> <button class="btn btn-outline-danger" (click)="onDeleteRez(temp)"><i
+                  class="fas fa-trash"></i></button></td>
+                <td class="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  </div>
+</div>
